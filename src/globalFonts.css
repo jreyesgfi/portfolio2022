@@ -1,5 +1,21 @@
 /*fonts*/
-@font-face { font-family: primary-light; src: url('/public/assets/fonts/MPLUS1/MPLUS1-Thin.ttf') }
-@font-face { font-family: primary-normal; src: url('/public/assets/fonts/MPLUS1/MPLUS1-Light.ttf') }
-@font-face { font-family: primary-bold; src: url('/public/assets/fonts/MPLUS1/MPLUS1-Bold.ttf') }
-@font-face { font-family: primary-semibold; src: url('/public/assets/fonts/MPLUS1/MPLUS1-SemiBold.ttf') }
+@font-face { 
+    font-family: primary-light;
+    src: url('../public/assets/fonts/BitterPro-Thin.ttf')
+}
+@font-face { 
+    font-family: primary-normal;
+    src: url('../public/assets/fonts/BitterPro-Light.ttf')
+}
+@font-face { 
+    font-family: primary-bold;
+    src: url('../public/assets/fonts/BitterPro-Bold.ttf')
+}
+@font-face {
+    font-family: primary-semibold;
+    src: url('../public/assets/fonts/BitterPro-SemiBold.ttf')
+}
+@font-face {
+    font-family: curvy;
+    src: url('../public/assets/fonts/Fasthand-Regular.ttf')
+}

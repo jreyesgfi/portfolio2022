@@ -1,4 +1,5 @@
 import React from 'react';
+import './globalFonts.css';
 import GlobalStyles from './globalStyles';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 

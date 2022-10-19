@@ -52,6 +52,10 @@ const GlobalStyles = createGlobalStyle`
 		color:${globalColors.dark.primary};
         font-family: primary-normal, sans-serif;
 		font-display: auto;
+		text-align: left;
+    	@media screen and (max-width: 800px) {
+			text-align: center;
+		}
     }
 
 `;
@@ -71,35 +75,37 @@ export const Container = styled.div`
 `;
 export const MainHeading = styled.h1`
     font-size: clamp(2.3rem, 4vw, 4.5rem);
+	font-family: primary-light;
 	margin-bottom: 1rem;
 	color: ${({ inverse }) => (inverse ? 
         globalColors.dark.primary : 
         globalColors.light.primary)};
-	width: 100%;
+	width: fit-content;
 	letter-spacing: 4px;
 	text-align: center;
 	user-select: none;
+	display:inline-block;
 `;
 export const Heading = styled.h2`
-	font-size: clamp(0.7rem, 3.5vw, 2.6rem);
+	font-size: clamp(0.7rem, 3.8vw, 2.6rem);
+	font-family: primary-normal, sans-serif;
 	user-select: none;
 	margin: ${({ margin }) => (margin ? margin : '')};
-	margin-bottom: ${({ mb }) => (mb ? mb : '')};
+	margin-bottom: ${({ mb }) => (mb ? mb : '0.5rem')};
 	margin-top: ${({ mt }) => (mt ? mt : '')};
 	color: ${({ inverse }) => (inverse ? 
         globalColors.dark.primary : 
         globalColors.light.primary)};
 	letter-spacing: 0.4rem;
-	line-height: 1.06;
-	text-align: left;
+	line-height: 1.4;
 	display: inline-block;
 	width: ${({ width }) => (width ? width : '')};
-	max-width: 40%;
-	@media screen and (max-width: 700px) {
-		text-align: center;
+	max-width: 40vw;
+	height: ${({ height }) => (height ? height : 'fit-content')};
+	@media screen and (max-width: 800px) {
 		margin-left:auto;
 		margin-right:auto;
-		max-width:80%;
+		max-width:80vw;
 		display: block;
 	}
 `;
@@ -170,9 +176,9 @@ export const Column = styled.div`
 	gap: ${({ gap }) => (gap ? gap : '')};
 	padding: ${({ padding }) => (padding ? padding : '')};
 	margin: ${({ margin }) => (margin ? margin : '')};
-	position: ${({ position }) => (position ? position : '')};
-	width: ${({ width }) => (width ? width : 'auto')};
-	min-width: ${({ minWidth }) => (minWidth ? minWidth : 'auto')};
+	position: ${({ position }) => (position ? position : 'auto')};
+	width: ${({ width }) => (width ? width : 'fit-content')};
+	min-width: ${({ minWidth }) => (minWidth ? minWidth : '30px')};
 	max-width: ${({ maxWidth }) => (maxWidth ? maxWidth : 'auto')};
 	height: ${({ height }) => (height ? height : 'auto')};
 	max-height: ${({ maxHeight }) => (maxHeight ? maxHeight : 'auto')};
@@ -217,25 +223,29 @@ export const Button = styled.button`
 
 export const Text = styled.p`
     color:${({inverse})=>inverse?globalColors.dark.primary:globalColors.light.primary};
-    width:${({width})=>width?width:'50%'};
+    width:${({width})=>width?width:'auto'};
 	font-size:${({fontSize})=>fontSize?fontSize:'12pt'};
 	user-select: none;
-    @media screen and (max-width: 700px) {
-		width:${({smWidth})=>smWidth?smWidth:'70%'};
+	max-width: 45vw;
+	font-family:${({font})=>font?font:'primary-normal'};
+	display: inline-block;
+    @media screen and (max-width: 800px) {
+		max-width: 80vw;
+		width:${({smWidth})=>smWidth?smWidth:'auto'};
 	}
 `;
 export const Image = styled.img`
 	object-fit:cover;
-	max-width:${({width})=>width?width:'50vw'};
+	max-width:${({width})=>width?width:'45vw'};
 	max-height:${({height})=>height?height:'60vh'};
-	@media screen and (max-width: 700px) {
+	@media screen and (max-width: 800px) {
 		max-width:${({width})=>width?width:'60vw'};
 		margin:0 auto;
 	}
 `
 export const CenterWrapper = styled.div`
 	position:absolute;
-	inset:0;
+	inset:${({inset})=>inset?inset:'10vh 0 0 0'};
 	width:95%;
 	height:${({ height }) => (height ? height : 'fit-content')};
 	margin:auto;
@@ -243,6 +253,7 @@ export const CenterWrapper = styled.div`
 	flex-wrap: wrap;
 	gap:1.5rem;
 	justify-content:space-around;
+	
 `;
 
 export default GlobalStyles;

@@ -1,6 +1,7 @@
 import React from 'react'
 import DividerWaves from '../../components/Dividers/DividerWave'
-import { CenterWrapper, Heading, Image, Section } from '../../globalStyles'
+import { introductionTextEs, introductionTitleEs } from '../../data/IntroductionData'
+import { CenterWrapper, Column, Heading, Image, Section, Text } from '../../globalStyles'
 
 function IntroductionSection() {
   return (
@@ -15,9 +16,15 @@ function IntroductionSection() {
         <Image
           src={'assets/images/programmer.svg'}
         />
-        <Heading inverse>
-          ANALISTA, PROGRAMADOR Y DISEÑADOR WEB
-        </Heading>
+        <Column>
+          <Heading inverse>
+            {introductionTitleEs}
+          </Heading>
+          <Text inverse>
+            {introductionTextEs}
+          </Text>
+        </Column>
+
       </CenterWrapper>
     </Section>
   )
