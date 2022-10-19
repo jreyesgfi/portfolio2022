@@ -1,20 +1,41 @@
 import styled from "styled-components";
-import { globalColors, Row, Text } from "../../globalStyles";
+import { globalColors, mediumSize, Row, Text } from "../../globalStyles";
+
+const row = {
+    gap:'2rem',
+    'max-width':'90vw',
+    'flex-direction':'row'
+}
+
+const column = {
+    gap:'0rem',
+    'max-width':'min(80vw, 500px)',
+    'flex-direction':'column'
+}
+
+const columnOrRow = (direction)=>{
+    if (direction === 'row'){
+        return row
+    }
+    return column
+}
 
 export const HtmlDecorationContainer = styled.div`
     display:flex;
-    flex-direction:${({direction})=>(direction?direction:'column')};
     flex-wrap:wrap;
     margin:0 auto 0 0;
     align-items: center;
-    gap:${({direction})=>(direction==='row'?'2rem':'0.5rem')};
-    max-width: ${({direction})=>(direction==='row'?'90vw':'50vw')};
     width:fit-content;
+    ${columnOrRow('row')}
     
     >*{
         display:inline-block;
         width:fit-content;
         margin: 0 auto 0 0;
+    }
+
+    @media screen and (max-width: ${mediumSize}){
+        ${columnOrRow('column')}
     }
 `;
 

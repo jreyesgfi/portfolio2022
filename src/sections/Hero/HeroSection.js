@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import HtmlTagContainer from '../../components/HtmlTagContainer/HtmlTagContainer'
 import { heroTextEs, heroTitleEs } from '../../data/HeroData'
 import {MainHeading, Section, Text } from '../../globalStyles'
 import {HeroTextContainer } from './HeroSectionStyles'
 
-function HeroSection() {
+const HeroSection = forwardRef((props,ref)=> {
   return (
-    <Section height={'100vh'}>
+    <Section height={'100vh'} ref={ref}>
       <HeroTextContainer inset={'0'}>
         <HtmlTagContainer tag={'h1'} direction={'row'}>
           <MainHeading>
@@ -14,13 +14,13 @@ function HeroSection() {
           </MainHeading>
         </HtmlTagContainer>
         <HtmlTagContainer tag={'p'}>
-          <Text fontSize={'20pt'}>
+          <Text fontSize={'16pt'}>
             {heroTextEs}
           </Text>
         </HtmlTagContainer>
       </HeroTextContainer>
     </Section>
   )
-}
+})
 
 export default HeroSection

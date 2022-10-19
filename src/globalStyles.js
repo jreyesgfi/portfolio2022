@@ -59,6 +59,8 @@ const GlobalStyles = createGlobalStyle`
     }
 
 `;
+
+export const mediumSize = '800px'
 export const WaitingContainer = styled.div`
 	visibility: ${({ loading }) => (loading==1?'hidden':'visible')}
 `
@@ -76,12 +78,15 @@ export const Container = styled.div`
 export const MainHeading = styled.h1`
     font-size: clamp(2.3rem, 4vw, 4.5rem);
 	font-family: primary-light;
-	margin-bottom: 1rem;
+	margin: 0;
+	padding-bottom:0;
 	color: ${({ inverse }) => (inverse ? 
         globalColors.dark.primary : 
         globalColors.light.primary)};
 	width: fit-content;
+	height:fit-content;
 	letter-spacing: 4px;
+	line-height: 1;
 	text-align: center;
 	user-select: none;
 	display:inline-block;
@@ -102,7 +107,7 @@ export const Heading = styled.h2`
 	width: ${({ width }) => (width ? width : '')};
 	max-width: 40vw;
 	height: ${({ height }) => (height ? height : 'fit-content')};
-	@media screen and (max-width: 800px) {
+	@media screen and (max-width: ${mediumSize}) {
 		margin-left:auto;
 		margin-right:auto;
 		max-width:80vw;
@@ -145,7 +150,7 @@ export const Section = styled.section`
 	min-height: ${({ minHeight }) => (minHeight ? minHeight : 'auto')};
 	padding-bottom: ${({ bottomWave}) => (bottomWave ? 0 : '')};
 	margin-bottom: ${({ bottomWave}) => (bottomWave ? 0 : '')};
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: ${mediumSize}) {
 		padding: ${({ smPadding }) => (smPadding ? smPadding : '0')};
 	}
 `;
@@ -238,8 +243,9 @@ export const Image = styled.img`
 	object-fit:cover;
 	max-width:${({width})=>width?width:'45vw'};
 	max-height:${({height})=>height?height:'60vh'};
-	@media screen and (max-width: 800px) {
+	@media screen and (max-width: ${mediumSize}) {
 		max-width:${({width})=>width?width:'60vw'};
+		max-height:${({height})=>height?height:'40vh'};
 		margin:0 auto;
 	}
 `
