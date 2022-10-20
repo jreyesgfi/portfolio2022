@@ -2,11 +2,17 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import ScrollProgress from '../components/ScrollProgress/ScrollProgress'
 import { Page } from '../globalStyles'
+import ScrollListener from '../listeners/ScrollListener'
 import HeroSection from '../sections/Hero/HeroSection'
 import IntroductionSection from '../sections/Introduction/IntroductionSection'
 
 function Home() {
+  const scrollListenerRef = useRef();
+  const pageRef = useRef();
+
+
   const [stageState,setStageState] = useState(0);
+  
   const {ref: heroRef, inView:heroInView} = useInView({ threshold: 0.4});
   const {ref: introductionRef, inView:introductionInView} = useInView({ threshold: 0.4});
   const {ref: whatIDoRef, inView:whatIDoInView} = useInView({ threshold: 0.4});
@@ -23,10 +29,17 @@ function Home() {
     })
   },[...refsArray])
 
+  const handleScroll = ()=>{
+    scrollListenerRef.current?.updateValues();
+  }
+
 
   return (
-    <Page>
-        <ScrollProgress stage={stageState}/>
+    <Page onScroll={handleScroll} ref={pageRef}>
+        <ScrollListener ref={scrollListenerRef} pageRef={pageRef}/>
+        <ScrollProgress 
+          stage={stageState}
+          addCallback={scrollListenerRef.current?.addCallback}/>
         <HeroSection ref={heroRef}/>
         <IntroductionSection ref={introductionRef}/>
         <IntroductionSection/>

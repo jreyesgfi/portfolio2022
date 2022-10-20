@@ -31,9 +31,9 @@ export const ProgressBarContainer = styled.div`
     position: absolute;
     inset:0;
     margin:auto;
-    width: 100%;
-    padding: 0 1.75rem;
+    width: calc(100% - 2.5rem);
     height:5px;
+    background-color: ${globalColors.grey.primary};
 `;
 
 export const ProgressCircleContainer = styled(Row)`
@@ -85,11 +85,13 @@ export const ProgressCircle = styled.div`
     }
 `;
 
-export const ProgressBarBackground = styled.div`
+export const ProgressBarColor= styled.div`
     height:100%;
-    width:100%;
+    width:${({progress})=>((progress??0).toString()+'%')};;
     border-radius:5px;
-    background-color: ${globalColors.grey.primary};
+    background-color: ${globalColors.color.primary};
+    position: absolute;
+    inset:auto auto auto 0;
 `;
 
 export const ScrollProgressContainer = styled.div`
