@@ -5,6 +5,7 @@ import { Page } from '../globalStyles'
 import ScrollListener from '../listeners/ScrollListener'
 import HeroSection from '../sections/Hero/HeroSection'
 import IntroductionSection from '../sections/Introduction/IntroductionSection'
+import WhatIDoSection from '../sections/WhatIDo/WhatIDoSection'
 
 function Home() {
   const scrollListenerRef = useRef();
@@ -42,7 +43,7 @@ function Home() {
           addCallback={scrollListenerRef.current?.addCallback}/>
         <HeroSection ref={heroRef}/>
         <IntroductionSection ref={introductionRef}/>
-        <IntroductionSection/>
+        <WhatIDoSection ref={whatIDoRef}/>
         <IntroductionSection/>
         <IntroductionSection/>
     </Page>

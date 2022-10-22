@@ -92,7 +92,7 @@ export const MainHeading = styled.h1`
 	display:inline-block;
 `;
 export const Heading = styled.h2`
-	font-size: clamp(0.7rem, 3.8vw, 2.6rem);
+	font-size: ${({ fontSize }) => (fontSize ? fontSize : 'clamp(0.7rem, 3.8vw, 2.6rem)')};
 	font-family: primary-normal, sans-serif;
 	user-select: none;
 	margin: ${({ margin }) => (margin ? margin : '')};
