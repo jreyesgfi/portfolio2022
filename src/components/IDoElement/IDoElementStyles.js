@@ -24,7 +24,7 @@ export const IDoTextArea = styled.div`
     >*{
         position:absolute;
         inset:0 0 auto;
-        margin:auto;
+        margin:0 auto;
         max-width:100%;
         width:fit-content;
         height:fit-content;
@@ -43,15 +43,28 @@ export const IDoDescription = styled.p`
     user-select: none;
     font-size:clamp(15pt,1.5vw,16pt);
 `;
+export const IDoElementImagesWrapper = styled.div`
+    position:relative;
+    margin:-20% auto 1rem auto;
+    width:50%;
+	height:50%;
+    perspective:2000;
+`;
 
-
+export const IDoElementImageHolder = styled.div`
+    /* pointer-events: none; */
+    position: absolute;
+    margin: auto;
+    inset: 0;
+	width:100%;
+	height:100%;
+`;
 
 export const IDoElementImage = styled.img`
+    object-fit:cover;
+    max-width:100%;
+    max-height:100%;
     pointer-events: none;
-    position:relative;
-    margin:auto auto 3px auto;
-	object-fit:cover;
-	max-width:75%;
-    width:fit-content;
-	max-height:50%;
+    border-radius: 1rem;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 `

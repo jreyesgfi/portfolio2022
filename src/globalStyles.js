@@ -3,7 +3,7 @@ import styled, {createGlobalStyle} from 'styled-components'
 export const globalColors = {
     dark:{
         primary:'#3E4463',
-        second:'#808633'
+        second:'#818599'
     },
     light:{
         primary:'#F2F2E6',

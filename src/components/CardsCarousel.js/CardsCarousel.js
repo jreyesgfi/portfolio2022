@@ -17,7 +17,7 @@ const CardsCarousel = forwardRef(({ collectionData, CardObjectStyle },ref) => {
 
   }
   const maxDrag = (element)=>{
-    return (- (element?.scrollWidth - element?.offsetWidth +150))
+    return (- (element?.scrollWidth - element?.offsetWidth +(element?.offsetWidth/4)))
   }
   
 
