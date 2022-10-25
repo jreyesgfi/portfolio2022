@@ -1,5 +1,5 @@
 import React, { forwardRef, useRef } from 'react'
-import IDoElement from '../../components/IDoElement/IDoElement'
+import CardElement from '../../components/CardElement/CardElement'
 import { IDoCollectionData } from '../../data/IDoData'
 import { Section } from '../../globalStyles';
 
@@ -12,7 +12,7 @@ const WhatIDoSection = forwardRef((props, ref) => {
     <Section inverse height={'100vh'} ref={ref}>
       <CardsCarousel
         collectionData={IDoCollectionData}
-        CardObjectStyle={IDoElement}
+        CardObjectStyle={CardElement}
       >
       </CardsCarousel>
     </Section>

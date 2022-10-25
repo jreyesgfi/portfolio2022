@@ -12,18 +12,19 @@ import { Row } from "../../globalStyles";
 // `;
 export const CardsCarouselElement = styled(Row)`
     position: absolute;
-    inset:0;
+    inset:10vh auto 0 0;
     margin:auto;
     width:100vw;
     height:fit-content;
-    gap:2rem;
+    gap:10vw;
     cursor: grab;
     overflow-x:visible;
-    scroll-snap-type: x mandatory;
-    padding:0 25vw;
+    padding:0 20vw;
+    
     /* hide scrollbar but allow scrolling */
     >*{
-        
+        transition: all 0.5s linear;
+        transform: ${({scrollxpos})=>(scrollxpos?`translateX(${scrollxpos}px)`:'')}
     }
 
 `;
