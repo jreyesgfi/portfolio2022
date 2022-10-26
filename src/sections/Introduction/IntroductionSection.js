@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import DividerWaves from '../../components/Dividers/DividerWave'
-import { introductionTextEs, introductionTitleEs } from '../../data/IntroductionData'
+import { introductionTextEs, introductionTitleEs } from '../../data/introductionData'
 import { CenterWrapper, Column, Heading, Image, Section, Text } from '../../globalStyles'
 
 const IntroductionSection = forwardRef((props,ref) =>{

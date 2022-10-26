@@ -5,6 +5,7 @@ import { Page } from '../globalStyles'
 import ScrollListener from '../listeners/ScrollListener'
 import HeroSection from '../sections/Hero/HeroSection'
 import IntroductionSection from '../sections/Introduction/IntroductionSection'
+import TwoMindsSection from '../sections/TwoMinds/TwoMindsSection'
 import WhatIDoSection from '../sections/WhatIDo/WhatIDoSection'
 
 function Home() {
@@ -44,7 +45,7 @@ function Home() {
         <HeroSection ref={heroRef}/>
         <IntroductionSection ref={introductionRef}/>
         <WhatIDoSection ref={whatIDoRef}/>
-        <IntroductionSection/>
+        <TwoMindsSection ref={twoMindsRef} inView={twoMindsInView}/>
         <IntroductionSection/>
     </Page>
   )

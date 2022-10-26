@@ -13,7 +13,7 @@ const artificialIntelligence = {
     images:['assets/icons/ia (1)-.svg','assets/icons/ia (2)-.svg','assets/icons/ia (3).svg','assets/icons/ia (4).svg','assets/icons/ia (5).svg'],
 }
 
-export const IDoCollectionData = [
+export const iDoCollectionData = [
     frontEnd,
     artificialIntelligence,
     artificialIntelligence,

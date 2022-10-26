@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import HtmlTagContainer from '../../components/HtmlTagContainer/HtmlTagContainer'
-import { heroTextEs, heroTitleEs } from '../../data/HeroData'
+import { heroTextEs, heroTitleEs } from '../../data/heroData'
 import {MainHeading, Section, Text } from '../../globalStyles'
 import {HeroTextContainer } from './HeroSectionStyles'
 

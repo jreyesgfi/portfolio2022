@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { HomeSectionsData } from '../../data/HomeProgressData'
+import { homeSectionsData } from '../../data/homeProgressData'
 import { ProgressCircleIcon, ProgressBarContainer, ProgressCircle, ProgressCircleContainer, ProgressCircleNumber, ScrollProgressContainer, ProgressBarColor } from './ScrollProgressStyles'
 
 function ScrollProgress({ stage, addCallback }) {
     // defining in just one place the sections data
-    const sectionsData = HomeSectionsData;
+    const sectionsData = homeSectionsData;
 
     // scroll progress value
     const [progressState, setProgressState] = useState();

@@ -1,4 +1,4 @@
-export const HomeSectionsData = {
+export const homeSectionsData = {
     Introduction: '',
     WhatIDo: '',
     TwoMinds:'',
